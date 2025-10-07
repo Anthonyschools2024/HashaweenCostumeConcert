@@ -17,8 +17,8 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0c0a09; /* Even darker than black for a deeper feel */
-            color: #e2e8f0;
+            background-color: #0c0a09; /* A very dark, almost black orange */
+            color: #e2e8f0; /* Light slate color for text */
             overflow-x: hidden;
         }
         .font-creepster {
@@ -31,7 +31,7 @@
             width: 100vw;
             height: 100vh;
             z-index: -1;
-            opacity: 0.7;
+            opacity: 0.6;
         }
         .content-wrapper {
             position: relative;
@@ -40,27 +40,6 @@
         }
         .text-glow-orange {
             text-shadow: 0 0 8px rgba(249, 115, 22, 0.8), 0 0 20px rgba(234, 88, 12, 0.6);
-        }
-        .text-glow-purple {
-            text-shadow: 0 0 8px rgba(168, 85, 247, 0.8), 0 0 20px rgba(147, 51, 234, 0.6);
-        }
-        .text-glow-lime {
-            text-shadow: 0 0 8px rgba(132, 204, 22, 0.8), 0 0 20px rgba(101, 163, 13, 0.6);
-        }
-        .btn-spooky {
-            transition: all 0.3s ease;
-            box-shadow: 0 0 10px rgba(249, 115, 22, 0.5), inset 0 0 5px rgba(249, 115, 22, 0.3);
-        }
-        .btn-spooky:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 0 20px rgba(249, 115, 22, 0.8), inset 0 0 10px rgba(249, 115, 22, 0.5);
-        }
-        .btn-vip {
-            box-shadow: 0 0 10px rgba(168, 85, 247, 0.5), inset 0 0 5px rgba(168, 85, 247, 0.3);
-        }
-        .btn-vip:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 0 20px rgba(168, 85, 247, 0.8), inset 0 0 10px rgba(168, 85, 247, 0.5);
         }
         .card-haunted {
             background-color: rgba(30, 27, 27, 0.7);
@@ -71,7 +50,44 @@
         .card-haunted:hover {
             border-color: rgba(249, 115, 22, 0.7);
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        .btn-spooky {
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(249, 115, 22, 0.5), inset 0 0 5px rgba(249, 115, 22, 0.3);
+        }
+        .btn-spooky:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 0 20px rgba(249, 115, 22, 0.8), inset 0 0 10px rgba(249, 115, 22, 0.5);
+        }
+        .btn-band {
+             background-color: #4a044e; /* Dark purple */
+             border: 2px solid #a855f7; /* Lighter purple */
+             color: #e9d5ff;
+             text-shadow: 0 0 5px #d8b4fe;
+        }
+         .btn-band:hover {
+            background-color: #581c87;
+            border-color: #c084fc;
+            box-shadow: 0 0 20px rgba(192, 132, 252, 0.7);
+         }
+        .btn-aloha {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            background: linear-gradient(45deg, #f97316, #ec4899, #14b8a6);
+            background-size: 200% 200%;
+            border: 2px solid white;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            animation: aloha-gradient 8s ease infinite;
+        }
+        .btn-aloha:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 0 20px rgba(236, 72, 153, 0.8);
+        }
+        @keyframes aloha-gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         .scroll-fade {
             opacity: 0;
@@ -87,76 +103,76 @@
 <body class="antialiased">
     <canvas id="bg-canvas"></canvas>
 
-    <div class="content-wrapper">
-        <header class="min-h-screen flex flex-col items-center justify-center text-center p-4 overflow-hidden">
+    <div class="content-wrapper min-h-screen">
+        <header class="text-center p-8 pt-16 md:pt-24">
             <div class="scroll-fade">
-                <h1 class="font-creepster text-6xl md:text-8xl lg:text-9xl text-orange-500 text-glow-orange tracking-wider">
-                    HASHAWEEN
+                <h1 class="font-creepster text-5xl md:text-7xl lg:text-8xl text-orange-500 text-glow-orange tracking-wider">
+                    Hashaween Costume Contest
                 </h1>
-                <h2 class="font-creepster text-3xl md:text-4xl lg:text-5xl text-slate-300 text-glow-purple tracking-wide mt-2">
-                    Costume Contest
+                <h2 class="font-creepster text-2xl md:text-3xl text-slate-300 tracking-wide mt-2">
+                    A Hollow Night of Creeps & Spooks
                 </h2>
-                <p class="mt-8 text-lg md:text-xl text-slate-400 max-w-2xl mx-auto">
-                    The coven calls you to a gathering of ghouls and ghosts!
-                </p>
-                <div class="mt-6 text-2xl font-bold text-lime-400 text-glow-lime">
-                    <p>Thursday, October 16th, 2025</p>
-                    <p class="text-xl text-slate-300">Doors Open 7:30 PM | Music 8 PM - 11 PM</p>
-                </div>
             </div>
         </header>
 
-        <main class="py-16 px-4 sm:px-6 lg:px-8">
+        <main class="py-12 px-4 sm:px-6 lg:px-8">
             <!-- Countdown Timer Section -->
-            <section id="countdown-section" class="max-w-4xl mx-auto text-center mb-20 scroll-fade">
-                 <h3 class="font-creepster text-4xl text-lime-400 text-glow-lime mb-4">Pre-Sale Ends Soon!</h3>
-                 <div id="countdown-timer" class="flex justify-center items-center space-x-2 md:space-x-4 text-slate-200">
-                     <div class="text-center bg-gray-900/50 p-3 md:p-4 rounded-lg border border-orange-500/30 w-20 md:w-28">
-                         <div id="days" class="text-4xl md:text-6xl font-bold text-orange-400">00</div>
-                         <div class="text-xs uppercase tracking-wider text-slate-400">Days</div>
-                     </div>
-                     <div class="text-center bg-gray-900/50 p-3 md:p-4 rounded-lg border border-orange-500/30 w-20 md:w-28">
-                         <div id="hours" class="text-4xl md:text-6xl font-bold text-orange-400">00</div>
-                         <div class="text-xs uppercase tracking-wider text-slate-400">Hours</div>
-                     </div>
-                     <div class="text-center bg-gray-900/50 p-3 md:p-4 rounded-lg border border-orange-500/30 w-20 md:w-28">
-                         <div id="minutes" class="text-4xl md:text-6xl font-bold text-orange-400">00</div>
-                         <div class="text-xs uppercase tracking-wider text-slate-400">Minutes</div>
-                     </div>
-                     <div class="text-center bg-gray-900/50 p-3 md:p-4 rounded-lg border border-orange-500/30 w-20 md:w-28">
-                         <div id="seconds" class="text-4xl md:text-6xl font-bold text-orange-400">00</div>
-                         <div class="text-xs uppercase tracking-wider text-slate-400">Seconds</div>
-                     </div>
-                 </div>
-                 <div id="countdown-ended" class="hidden font-creepster text-4xl text-red-500">Pre-Sale Has Ended! Tickets at the door!</div>
+            <section class="max-w-4xl mx-auto mb-16 text-center scroll-fade">
+                <h3 class="font-creepster text-4xl text-lime-400 mb-4">Pre-Sale Ends In...</h3>
+                <div id="countdown" class="text-4xl md:text-5xl font-bold text-white tabular-nums tracking-wider"
+                    style="text-shadow: 0 0 10px rgba(190, 242, 100, 0.7);">
+                    <span>00d</span> : <span>00h</span> : <span>00m</span> : <span>00s</span>
+                </div>
             </section>
-
+            
             <!-- Event Details Section -->
-            <section class="max-w-4xl mx-auto mb-20 space-y-8 scroll-fade">
-                <h3 class="font-creepster text-5xl text-center text-purple-400 text-glow-purple">The Haunting Summons</h3>
+            <section class="max-w-4xl mx-auto mb-16 space-y-8 scroll-fade">
+                <h3 class="font-creepster text-5xl text-center text-purple-400 text-glow-purple">The Coven Gathers...</h3>
                 <p class="text-lg leading-relaxed text-slate-300 text-center">
-                    Dare to don your most ghoulish guise, your most wicked witchery, or your most phantasmal form! Our council of spirits will judge your apparitions, and the three most magnificent creations will seize a treasure from beyond the veil:
+                    On the hallowed eve of <strong class="text-orange-400">Thursday, October 16th</strong>, you are summoned! As the moon rises, the crypt doors will creak open at <strong class="text-orange-400">7:30 PM</strong>. The haunting incantations from our spectral musicians shall begin at <strong class="text-orange-400">8:00 PM</strong> and echo through the night until the witching hour of <strong class="text-orange-400">11:00 PM</strong>.
                 </p>
-                <div class="flex flex-wrap justify-center gap-6 text-center">
-                    <div class="card-haunted p-6 rounded-lg w-full sm:w-1/2 lg:w-1/4">
-                        <p class="font-creepster text-3xl text-orange-400 text-glow-orange">1st Place</p>
-                        <p class="text-2xl font-bold text-slate-100 mt-2">$100</p>
-                        <p class="text-sm text-slate-400">Cursed Bounty</p>
+                <p class="text-lg leading-relaxed text-slate-300 text-center">
+                    Dare to don your most ghoulish guise! Our council of spirits will judge your apparitions, and the three most magnificent creations will seize a treasure from beyond the veil:
+                </p>
+                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center mt-8">
+                    <!-- 1st Place -->
+                    <div class="card-haunted p-6 rounded-xl border-yellow-400/50 hover:border-yellow-300/70">
+                        <h4 class="font-creepster text-3xl text-yellow-300">1st Place</h4>
+                        <p class="text-4xl font-bold text-white my-2">$100</p>
+                        <p class="text-xl text-slate-300 font-semibold">Cursed Bounty</p>
                     </div>
-                    <div class="card-haunted p-6 rounded-lg w-full sm:w-1/2 lg:w-1/4">
-                        <p class="font-creepster text-3xl text-orange-400 text-glow-orange">2nd Place</p>
-                        <p class="text-2xl font-bold text-slate-100 mt-2">$50</p>
-                        <p class="text-sm text-slate-400">Spectral Sum</p>
+                    <!-- 2nd Place -->
+                    <div class="card-haunted p-6 rounded-xl border-slate-300/50 hover:border-slate-200/70">
+                        <h4 class="font-creepster text-3xl text-slate-100">2nd Place</h4>
+                        <p class="text-4xl font-bold text-white my-2">$50</p>
+                        <p class="text-xl text-slate-300 font-semibold">Spectral Sum</p>
                     </div>
-                     <div class="card-haunted p-6 rounded-lg w-full sm:w-1/2 lg:w-1/4">
-                        <p class="font-creepster text-3xl text-orange-400 text-glow-orange">3rd Place</p>
-                        <p class="text-2xl font-bold text-slate-100 mt-2">$25</p>
-                        <p class="text-sm text-slate-400">Ghostly Purse</p>
+                    <!-- 3rd Place -->
+                    <div class="card-haunted p-6 rounded-xl border-amber-600/50 hover:border-amber-500/70">
+                        <h4 class="font-creepster text-3xl text-amber-500">3rd Place</h4>
+                        <p class="text-4xl font-bold text-white my-2">$25</p>
+                        <p class="text-xl text-slate-300 font-semibold">Ghostly Purse</p>
                     </div>
                 </div>
                  <p class="text-lg leading-relaxed text-slate-300 text-center">
                     The very air will vibrate with chilling melodies, for we have summoned the phantom champions from the "RESISTANCE JAM: BATTLE OF THE BANDS"! The top three bands have been resurrected for one more night to cast a sonic spell upon all who attend this hollow night of creeps and spooks.
                 </p>
+            </section>
+
+             <!-- Band Links Section -->
+            <section class="max-w-4xl mx-auto mb-16 scroll-fade">
+                <h3 class="font-creepster text-5xl text-center text-purple-400 text-glow-purple mb-8">Summon the Bands</h3>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-6">
+                    <a href="https://www.instagram.com/sluggnuttband?utm_source=ig_web_button_share_sheet&igsh=dWExYWtmYTZlNXE5" target="_blank" rel="noopener noreferrer" class="btn-spooky btn-band font-creepster text-3xl py-3 px-8 rounded-full w-full md:w-auto text-center">
+                        Sluggnutt
+                    </a>
+                    <a href="https://www.instagram.com/horseofficialband?utm_source=ig_web_button_share_sheet&igsh=cHRxcjFneGhwcDZt" target="_blank" rel="noopener noreferrer" class="btn-spooky btn-band font-creepster text-3xl py-3 px-8 rounded-full w-full md:w-auto text-center">
+                        Horse
+                    </a>
+                    <a href="https://www.instagram.com/hesitateband?utm_source=ig_web_button_share_sheet&igsh=d2Z5b2J3MngzcWhn" target="_blank" rel="noopener noreferrer" class="btn-spooky btn-band font-creepster text-3xl py-3 px-8 rounded-full w-full md:w-auto text-center">
+                        Hesitate
+                    </a>
+                </div>
             </section>
 
             <!-- Notice Section -->
@@ -178,56 +194,51 @@
             <section class="max-w-5xl mx-auto mb-20 scroll-fade">
                 <h3 class="font-creepster text-5xl text-center text-orange-500 text-glow-orange mb-10">Secure Your Passage</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-                    <!-- GA Ticket -->
-                    <div class="card-haunted rounded-xl overflow-hidden flex flex-col">
-                        <div class="p-8 flex-grow">
-                            <h4 class="font-creepster text-4xl text-lime-400 text-glow-lime mb-2">General Admission</h4>
-                            <p class="text-2xl font-bold text-slate-100 mb-4">$15 <span class="text-base font-normal text-slate-400">Pre-Sale</span> / $20 <span class="text-base font-normal text-slate-400">At The Door</span></p>
-                            <ul class="space-y-3 text-slate-300 list-disc list-inside">
-                                <li>Entry to the Costume Contest</li>
-                                <li>3 trips to the A.E.S Dab Bar</li>
-                            </ul>
-                        </div>
-                        <div class="p-6 bg-black/20">
-                            <a href="https://www.paypal.com/ncp/payment/69BABR9LCCZ5L" target="_blank" class="btn-spooky block w-full bg-orange-600 text-white font-bold text-lg text-center py-3 rounded-lg">
-                                Get GA Ticket
-                            </a>
-                        </div>
+                    <!-- General Admission Ticket -->
+                    <div class="card-haunted p-8 rounded-xl flex flex-col">
+                        <h4 class="font-creepster text-4xl text-lime-400 mb-4">General Admission</h4>
+                        <p class="text-3xl font-bold text-white mb-4">$15 <span class="text-lg font-normal">Pre-Sale</span> / $20 <span class="text-lg font-normal">At The Door</span></p>
+                        <ul class="text-slate-300 space-y-3 mb-6 flex-grow">
+                            <li class="flex items-start"><span class="text-lime-400 mr-2">✔</span>Enter the Costume Contest</li>
+                            <li class="flex items-start"><span class="text-lime-400 mr-2">✔</span>3x Visits to the A.E.S. Dab Bar</li>
+                        </ul>
+                        <a href="https://www.paypal.com/ncp/payment/69BABR9LCCZ5L" target="_blank" rel="noopener noreferrer" class="btn-spooky mt-auto block w-full bg-lime-600 text-white font-bold text-lg text-center py-3 rounded-lg">
+                            Buy GA Ticket
+                        </a>
                     </div>
-                    <!-- VIP Ticket -->
-                    <div class="card-haunted rounded-xl overflow-hidden flex flex-col border-purple-500/50 hover:border-purple-400/70">
-                        <div class="p-8 flex-grow">
-                             <h4 class="font-creepster text-4xl text-purple-400 text-glow-purple mb-2">VIP Ghoul</h4>
-                             <p class="text-2xl font-bold text-slate-100 mb-4">$25 <span class="text-base font-normal text-slate-400">Pre-Sale</span> / $30 <span class="text-base font-normal text-slate-400">At The Door</span></p>
-                            <ul class="space-y-3 text-slate-300 list-disc list-inside">
-                                <li>Access to VIP Lounge Dank Private Party</li>
-                                <li>Free Infused Cake & Punch</li>
-                                <li>Unlimited A.E.S Dab Bar Access</li>
-                                <li class="font-bold text-purple-300">Skip The Line (Pre-Sales Only)</li>
-                            </ul>
-                        </div>
-                         <div class="p-6 bg-black/20">
-                            <a href="https://www.paypal.com/ncp/payment/XZ7G9N59DQD84" target="_blank" class="btn-vip block w-full bg-purple-600 text-white font-bold text-lg text-center py-3 rounded-lg">
-                                Summon VIP Ticket
-                            </a>
-                        </div>
+                    <!-- VIP Admission Ticket -->
+                    <div class="card-haunted p-8 rounded-xl flex flex-col border-purple-500/50 hover:border-purple-400/70">
+                        <h4 class="font-creepster text-4xl text-purple-400 mb-4">VIP Admission</h4>
+                        <p class="text-3xl font-bold text-white mb-4">$25 <span class="text-lg font-normal">Pre-Sale</span> / $30 <span class="text-lg font-normal">At The Door</span></p>
+                        <ul class="text-slate-300 space-y-3 mb-6 flex-grow">
+                            <li class="flex items-start"><span class="text-purple-400 mr-2">✦</span>Access to VIP Lounge & Private Party</li>
+                            <li class="flex items-start"><span class="text-purple-400 mr-2">✦</span>Free Infused Cake & Punch</li>
+                            <li class="flex items-start"><span class="text-purple-400 mr-2">✦</span>Unlimited A.E.S. Dab Bar Access</li>
+                            <li class="flex items-start"><span class="text-purple-400 mr-2">✦</span>Skip The Line (Pre-Sales Only)</li>
+                        </ul>
+                        <a href="https://www.paypal.com/ncp/payment/XZ7G9N59DQD84" target="_blank" rel="noopener noreferrer" class="btn-spooky mt-auto block w-full bg-purple-600 text-white font-bold text-lg text-center py-3 rounded-lg">
+                            Buy VIP Ticket
+                        </a>
                     </div>
                 </div>
-                <p class="text-center mt-8 text-slate-500">All Pre-Sales end on October 15th. All sales are final.</p>
             </section>
-            
-            <!-- Location Section -->
-            <section class="text-center max-w-2xl mx-auto scroll-fade">
-                 <h3 class="font-creepster text-5xl text-center text-lime-400 text-glow-lime mb-6">Find The Lair</h3>
-                 <p class="mb-6 text-slate-300">The ritual will take place at the Boman Twin Event Center.</p>
-                 <a href="https://www.google.com/maps/dir//2909+S+Sheridan+Rd,+Tulsa,+OK+74129/@36.1210408,-95.9451559,13z/data=!4m9!4m8!1m0!1m5!1m1!1s0x87b6ed5c368d8a99:0xdf93c1482b39a08!2m2!1d-95.9038706!2d36.1210479!3e0?entry=ttu&g_ep=EgoyMDI1MTAwMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn-spooky inline-block bg-lime-700/50 border border-lime-500 text-lime-200 font-bold text-lg py-3 px-8 rounded-lg">
-                    Open Portal to Map
-                </a>
+
+             <!-- Location & Sponsor Section -->
+            <section class="max-w-4xl mx-auto mb-16 scroll-fade">
+                <h3 class="font-creepster text-5xl text-center text-orange-500 text-glow-orange mb-8">Find Your Way</h3>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-6">
+                    <a href="https://www.google.com/maps/dir//2909+S+Sheridan+Rd,+Tulsa,+OK+74129/@36.1210408,-95.9451559,13z/data=!4m9!4m8!1m0!1m5!1m1!1s0x87b6ed5c368d8a99:0xdf93c1482b39a08!2m2!1d-95.9038706!2d36.1210479!3e0?entry=ttu&g_ep=EgoyMDI1MTAwMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="btn-spooky bg-orange-700 text-white font-bold text-xl py-4 px-8 rounded-full w-full md:w-auto text-center">
+                        Event Venue
+                    </a>
+                    <a href="https://www.google.com/maps/place/Ok+Aloha+Dispensary/@36.0462704,-96.0778228,17z/data=!3m1!4b1!4m6!3m5!1s0x87b6bfc224c1d6dd:0xe9faff8990fbba6c!8m2!3d36.0462704!4d-96.0752425!16s%2Fg%2F11fjz_wg8_?entry=ttu&g_ep=EgoyMDI1MTAwMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="btn-aloha text-xl py-4 px-8 rounded-full w-full md:w-auto text-center">
+                       OK Aloha Dispensary
+                    </a>
+                </div>
             </section>
         </main>
-
+        
         <footer class="text-center py-8 mt-16 border-t border-gray-800">
-            <p class="text-slate-500">&copy; 2025 Hashaween. All rights reserved by the spirits.</p>
+            <p class="text-slate-500">&copy; 2025 Hashaween. All ghouls welcome. All sales final.</p>
         </footer>
     </div>
 
@@ -244,34 +255,23 @@
 
         let scene, camera, renderer;
         const pumpkins = [];
-        const ghosts = [];
-
-        function init() {
-            // Scene
+        
+        function init3D() {
             scene = new THREE.Scene();
             scene.fog = new THREE.FogExp2(0x0c0a09, 0.03);
-
-            // Camera
             camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
             camera.position.z = 50;
-
-            // Renderer
             renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('bg-canvas'), alpha: true });
             renderer.setSize(window.innerWidth, window.innerHeight);
 
-            // Lights
             const ambientLight = new THREE.AmbientLight(0x404040, 2);
             scene.add(ambientLight);
             const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
             directionalLight.position.set(50, 50, 50);
             scene.add(directionalLight);
 
-            // Create Pumpkins
             const pumpkinMaterial = new THREE.MeshStandardMaterial({
-                color: 0xff7500,
-                emissive: 0xaa5500,
-                roughness: 0.6,
-                metalness: 0.2
+                color: 0xff7500, emissive: 0xaa5500, roughness: 0.6, metalness: 0.2
             });
             const stemMaterial = new THREE.MeshStandardMaterial({ color: 0x006400 });
 
@@ -281,81 +281,35 @@
                 pumpkinBody.scale.y = 0.8;
                 const stem = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.2, 0.5, 8), stemMaterial);
                 stem.position.y = 0.7;
-                
                 pumpkinGroup.add(pumpkinBody);
                 pumpkinGroup.add(stem);
 
-                pumpkinGroup.position.set(
-                    (Math.random() - 0.5) * 150,
-                    (Math.random() - 0.5) * 100,
-                    (Math.random() - 0.5) * 100
-                );
-
-                pumpkinGroup.rotation.set(
-                    Math.random() * Math.PI,
-                    Math.random() * Math.PI,
-                    Math.random() * Math.PI
-                );
-
+                pumpkinGroup.position.set((Math.random() - 0.5) * 150, (Math.random() - 0.5) * 100, (Math.random() - 0.5) * 100);
+                pumpkinGroup.rotation.set(Math.random() * Math.PI, Math.random() * Math.PI, Math.random() * Math.PI);
                 const scale = Math.random() * 2 + 1;
                 pumpkinGroup.scale.set(scale, scale, scale);
                 pumpkinGroup.userData.velocity = new THREE.Vector3(0, Math.random() * 0.01 + 0.005, 0);
-                pumpkinGroup.userData.rotationSpeed = new THREE.Vector3(
-                    (Math.random() - 0.5) * 0.01,
-                    (Math.random() - 0.5) * 0.01,
-                    (Math.random() - 0.5) * 0.01
-                );
+                pumpkinGroup.userData.rotationSpeed = new THREE.Vector3((Math.random() - 0.5) * 0.01, (Math.random() - 0.5) * 0.01, (Math.random() - 0.5) * 0.01);
                 pumpkins.push(pumpkinGroup);
                 scene.add(pumpkinGroup);
             }
-
-            // Create Ghosts (particles)
-            const ghostMaterial = new THREE.PointsMaterial({
-                color: 0x9333ea,
-                size: 0.5,
-                blending: THREE.AdditiveBlending,
-                transparent: true,
-                opacity: 0.6
-            });
-            const ghostGeometry = new THREE.BufferGeometry();
-            const vertices = [];
-            for (let i = 0; i < 300; i++) {
-                vertices.push(
-                    (Math.random() - 0.5) * 200,
-                    (Math.random() - 0.5) * 150,
-                    (Math.random() - 0.5) * 150
-                );
-            }
-            ghostGeometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
-            const ghostParticles = new THREE.Points(ghostGeometry, ghostMaterial);
-            scene.add(ghostParticles);
-
-            // Event Listeners
-            window.addEventListener('resize', onWindowResize, false);
-            
-            animate();
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            }, false);
+            animate3D();
         }
 
-        function onWindowResize() {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        }
-
-        function animate() {
-            requestAnimationFrame(animate);
-
+        function animate3D() {
+            requestAnimationFrame(animate3D);
             pumpkins.forEach(p => {
                 p.position.add(p.userData.velocity);
                 p.rotation.x += p.userData.rotationSpeed.x;
                 p.rotation.y += p.userData.rotationSpeed.y;
                 p.rotation.z += p.userData.rotationSpeed.z;
-
-                if (p.position.y > 75) {
-                    p.position.y = -75;
-                }
+                if (p.position.y > 75) p.position.y = -75;
             });
-
             renderer.render(scene, camera);
         }
 
@@ -363,35 +317,28 @@
         
         // Countdown Timer Logic
         function startCountdown() {
-            const countdownDate = new Date("2025-10-15T23:59:59").getTime();
-            const timerEl = document.getElementById('countdown-timer');
-            const endedEl = document.getElementById('countdown-ended');
-            const sectionEl = document.getElementById('countdown-section');
+            const countdownEl = document.getElementById('countdown');
+            if (!countdownEl) return;
+            const presaleEndDate = new Date('October 15, 2025 23:59:59').getTime();
 
-            const updateTimer = () => {
+            const interval = setInterval(() => {
                 const now = new Date().getTime();
-                const distance = countdownDate - now;
+                const distance = presaleEndDate - now;
 
                 if (distance < 0) {
                     clearInterval(interval);
-                    if (timerEl) timerEl.classList.add('hidden');
-                    if (endedEl) endedEl.classList.remove('hidden');
+                    countdownEl.innerHTML = "Pre-Sale Has Ended!";
+                    countdownEl.parentElement.querySelector('h3').textContent = "The Gates Are Open...";
                     return;
                 }
-                
+
                 const days = Math.floor(distance / (1000 * 60 * 60 * 24));
                 const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                document.getElementById('days').innerText = days.toString().padStart(2, '0');
-                document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
-                document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
-                document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
-            };
-
-            const interval = setInterval(updateTimer, 1000);
-            updateTimer();
+                
+                countdownEl.innerHTML = `<span>${String(days).padStart(2, '0')}d</span> : <span>${String(hours).padStart(2, '0')}h</span> : <span>${String(minutes).padStart(2, '0')}m</span> : <span>${String(seconds).padStart(2, '0')}s</span>`;
+            }, 1000);
         }
 
         // Scroll Fade-in Logic
@@ -404,26 +351,21 @@
                     }
                 });
             }, { threshold: 0.1 });
-
-            fadeElems.forEach(elem => {
-                observer.observe(elem);
-            });
+            fadeElems.forEach(elem => observer.observe(elem));
         }
-        
+
         document.addEventListener('DOMContentLoaded', () => {
-            init();
+            init3D();
             startCountdown();
             handleScrollFade();
-            
-            // Initial call for the first element which might be in view
+            // Initial fade-in for header
             setTimeout(() => {
-                const firstElement = document.querySelector('.scroll-fade');
-                if (firstElement) {
-                   firstElement.classList.add('visible');
-                }
+                document.querySelector('.scroll-fade').classList.add('visible');
             }, 100);
         });
     </script>
 </body>
 </html>
+
+
 
