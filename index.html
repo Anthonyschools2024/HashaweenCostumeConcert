@@ -5,16 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HASHAWEEN COSTUME CONTEST</title>
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Google Fonts --><link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Inter:wght@400;700&display=swap" rel="stylesheet">
     
-    <!-- Custom Styles -->
-    <style>
+    <!-- Custom Styles --><style>
         body {
             font-family: 'Inter', sans-serif;
             background-color: #0c0a09; /* A very dark, almost black orange */
@@ -70,6 +67,18 @@
             border-color: #c084fc;
             box-shadow: 0 0 20px rgba(192, 132, 252, 0.7);
          }
+        .btn-cirkus {
+            background-color: #6d071a; /* Darker, blood-like red */
+            color: #000000; /* black */
+            border: 2px solid #f97316; /* orange-500 */
+            text-shadow: 0 0 8px rgba(249, 115, 22, 0.9);
+            font-weight: 900;
+        }
+        .btn-cirkus:hover {
+            background-color: #8c0c20; /* Slightly lighter blood red on hover */
+            border-color: #fb923c; /* orange-400 */
+            box-shadow: 0 0 25px rgba(249, 115, 22, 1), inset 0 0 10px rgba(251, 146, 60, 0.5);
+        }
         .btn-aloha {
             font-family: 'Inter', sans-serif;
             font-weight: 700;
@@ -116,8 +125,7 @@
         </header>
 
         <main class="py-12 px-4 sm:px-6 lg:px-8">
-            <!-- Countdown Timer Section -->
-            <section class="max-w-4xl mx-auto mb-16 text-center scroll-fade">
+            <!-- Countdown Timer Section --><section class="max-w-4xl mx-auto mb-16 text-center scroll-fade">
                 <h3 class="font-creepster text-4xl text-lime-400 mb-4">Pre-Sale Ends In...</h3>
                 <div id="countdown" class="text-4xl md:text-5xl font-bold text-white tabular-nums tracking-wider"
                     style="text-shadow: 0 0 10px rgba(190, 242, 100, 0.7);">
@@ -125,8 +133,7 @@
                 </div>
             </section>
             
-            <!-- Event Details Section -->
-            <section class="max-w-4xl mx-auto mb-16 space-y-8 scroll-fade">
+            <!-- Event Details Section --><section class="max-w-4xl mx-auto mb-16 space-y-8 scroll-fade">
                 <h3 class="font-creepster text-5xl text-center text-purple-400 text-glow-purple">The Coven Gathers...</h3>
                 <p class="text-lg leading-relaxed text-slate-300 text-center">
                     On the hallowed eve of <strong class="text-orange-400">Thursday, October 16th</strong>, you are summoned! As the moon rises, the crypt doors will creak open at <strong class="text-orange-400">7:30 PM</strong>. The haunting incantations from our spectral musicians shall begin at <strong class="text-orange-400">8:00 PM</strong> and echo through the night until the witching hour of <strong class="text-orange-400">11:00 PM</strong>.
@@ -135,20 +142,17 @@
                     Dare to don your most ghoulish guise! Our council of spirits will judge your apparitions, and the three most magnificent creations will seize a treasure from beyond the veil:
                 </p>
                  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center mt-8">
-                    <!-- 1st Place -->
-                    <div class="card-haunted p-6 rounded-xl border-yellow-400/50 hover:border-yellow-300/70">
+                    <!-- 1st Place --><div class="card-haunted p-6 rounded-xl border-yellow-400/50 hover:border-yellow-300/70">
                         <h4 class="font-creepster text-3xl text-yellow-300">1st Place</h4>
                         <p class="text-4xl font-bold text-white my-2">$100</p>
                         <p class="text-xl text-slate-300 font-semibold">Cursed Bounty</p>
                     </div>
-                    <!-- 2nd Place -->
-                    <div class="card-haunted p-6 rounded-xl border-slate-300/50 hover:border-slate-200/70">
+                    <!-- 2nd Place --><div class="card-haunted p-6 rounded-xl border-slate-300/50 hover:border-slate-200/70">
                         <h4 class="font-creepster text-3xl text-slate-100">2nd Place</h4>
                         <p class="text-4xl font-bold text-white my-2">$50</p>
                         <p class="text-xl text-slate-300 font-semibold">Spectral Sum</p>
                     </div>
-                    <!-- 3rd Place -->
-                    <div class="card-haunted p-6 rounded-xl border-amber-600/50 hover:border-amber-500/70">
+                    <!-- 3rd Place --><div class="card-haunted p-6 rounded-xl border-amber-600/50 hover:border-amber-500/70">
                         <h4 class="font-creepster text-3xl text-amber-500">3rd Place</h4>
                         <p class="text-4xl font-bold text-white my-2">$25</p>
                         <p class="text-xl text-slate-300 font-semibold">Ghostly Purse</p>
@@ -159,15 +163,14 @@
                 </p>
             </section>
 
-             <!-- Band Links Section -->
-            <section class="max-w-4xl mx-auto mb-16 scroll-fade">
+             <!-- Band Links Section --><section class="max-w-4xl mx-auto mb-16 scroll-fade">
                 <h3 class="font-creepster text-5xl text-center text-purple-400 text-glow-purple mb-8">Summon the Bands</h3>
                 <div class="flex flex-col md:flex-row justify-center items-center gap-6">
                     <a href="https://www.instagram.com/sluggnuttband?utm_source=ig_web_button_share_sheet&igsh=dWExYWtmYTZlNXE5" target="_blank" rel="noopener noreferrer" class="btn-spooky btn-band font-creepster text-3xl py-3 px-8 rounded-full w-full md:w-auto text-center">
                         Sluggnutt
                     </a>
-                    <a href="https://www.instagram.com/horseofficialband?utm_source=ig_web_button_share_sheet&igsh=cHRxcjFneGhwcDZt" target="_blank" rel="noopener noreferrer" class="btn-spooky btn-band font-creepster text-3xl py-3 px-8 rounded-full w-full md:w-auto text-center">
-                        Horse
+                    <a href="https://cirkus2.bandzoogle.com/home?fbclid=IwdGRjcANVTblleHRuA2FlbQIxMQABHs0FOOBpB07kMPg9o1rUUgtgvb507DX9O9o0NKYozcJWrZxbGdT3IVEInQXQ_aem_jtayszpDBOSgWWNRAc7BQw" target="_blank" rel="noopener noreferrer" class="btn-spooky btn-cirkus font-creepster text-3xl py-3 px-8 rounded-full w-full md:w-auto text-center">
+                        CIRKUS
                     </a>
                     <a href="https://www.instagram.com/hesitateband?utm_source=ig_web_button_share_sheet&igsh=d2Z5b2J3MngzcWhn" target="_blank" rel="noopener noreferrer" class="btn-spooky btn-band font-creepster text-3xl py-3 px-8 rounded-full w-full md:w-auto text-center">
                         Hesitate
@@ -175,8 +178,7 @@
                 </div>
             </section>
 
-            <!-- Notice Section -->
-            <section class="max-w-4xl mx-auto mb-16 scroll-fade">
+            <!-- Notice Section --><section class="max-w-4xl mx-auto mb-16 scroll-fade">
                 <div class="card-haunted border-yellow-500/50 hover:border-yellow-400/70 p-6 rounded-xl text-center">
                      <h3 class="font-creepster text-4xl text-yellow-400 text-glow-orange mb-4 flex items-center justify-center gap-4">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -190,12 +192,10 @@
                 </div>
             </section>
 
-            <!-- Tickets Section -->
-            <section class="max-w-5xl mx-auto mb-20 scroll-fade">
+            <!-- Tickets Section --><section class="max-w-5xl mx-auto mb-20 scroll-fade">
                 <h3 class="font-creepster text-5xl text-center text-orange-500 text-glow-orange mb-10">Secure Your Passage</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-                    <!-- General Admission Ticket -->
-                    <div class="card-haunted p-8 rounded-xl flex flex-col">
+                    <!-- General Admission Ticket --><div class="card-haunted p-8 rounded-xl flex flex-col">
                         <h4 class="font-creepster text-4xl text-lime-400 mb-4">General Admission</h4>
                         <p class="text-3xl font-bold text-white mb-4">$15 <span class="text-lg font-normal">Pre-Sale</span> / $20 <span class="text-lg font-normal">At The Door</span></p>
                         <ul class="text-slate-300 space-y-3 mb-6 flex-grow">
@@ -206,8 +206,7 @@
                             Buy GA Ticket
                         </a>
                     </div>
-                    <!-- VIP Admission Ticket -->
-                    <div class="card-haunted p-8 rounded-xl flex flex-col border-purple-500/50 hover:border-purple-400/70">
+                    <!-- VIP Admission Ticket --><div class="card-haunted p-8 rounded-xl flex flex-col border-purple-500/50 hover:border-purple-400/70">
                         <h4 class="font-creepster text-4xl text-purple-400 mb-4">VIP Admission</h4>
                         <p class="text-3xl font-bold text-white mb-4">$25 <span class="text-lg font-normal">Pre-Sale</span> / $30 <span class="text-lg font-normal">At The Door</span></p>
                         <ul class="text-slate-300 space-y-3 mb-6 flex-grow">
@@ -223,8 +222,7 @@
                 </div>
             </section>
 
-             <!-- Location & Sponsor Section -->
-            <section class="max-w-4xl mx-auto mb-16 scroll-fade">
+             <!-- Location & Sponsor Section --><section class="max-w-4xl mx-auto mb-16 scroll-fade">
                 <h3 class="font-creepster text-5xl text-center text-orange-500 text-glow-orange mb-8">Find Your Way</h3>
                 <div class="flex flex-col md:flex-row justify-center items-center gap-6">
                     <a href="https://www.google.com/maps/dir//2909+S+Sheridan+Rd,+Tulsa,+OK+74129/@36.1210408,-95.9451559,13z/data=!4m9!4m8!1m0!1m5!1m1!1s0x87b6ed5c368d8a99:0xdf93c1482b39a08!2m2!1d-95.9038706!2d36.1210479!3e0?entry=ttu&g_ep=EgoyMDI1MTAwMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="btn-spooky bg-orange-700 text-white font-bold text-xl py-4 px-8 rounded-full w-full md:w-auto text-center">
@@ -242,8 +240,7 @@
         </footer>
     </div>
 
-    <!-- Three.js -->
-    <script type="importmap">
+    <!-- Three.js --><script type="importmap">
         {
             "imports": {
                 "three": "https://cdn.jsdelivr.net/npm/three@0.163.0/build/three.module.js"
@@ -366,6 +363,4 @@
     </script>
 </body>
 </html>
-
-
 
